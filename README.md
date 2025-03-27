@@ -1,3 +1,5 @@
+https://vocal-text.netlify.app/
+
 # Speech Synthesis Web App
 
 This web application allows users to convert text to speech using the Web Speech API. It features a simple user interface that lets users input text, select different voices, adjust speaking rate and pitch, and listen to the spoken output. The app supports dynamic voice selection, input validation, and error handling, ensuring a smooth user experience.
