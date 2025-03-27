@@ -15,20 +15,31 @@ errorMessage.style.display = "none";
 textInput.parentNode.appendChild(errorMessage);
 
 const getVoices = () => {
-  voices = synth.getVoices();
-  voiceSelect.innerHTML = "";
-
-  voices.forEach(voice => {
-      const option = document.createElement("option");
-      option.textContent = `${voice.name} (${voice.lang})`;
-
-      option.setAttribute("data-lang", voice.lang);
-      option.setAttribute("data-name", voice.name);
-      voiceSelect.appendChild(option);
-  });
-};
-
-getVoices();
+    voices = synth.getVoices();
+  
+    voices.sort((a, b) => {
+      if (a.lang === 'tr-TR' || a.lang === 'en-US') return -1; 
+      if (b.lang === 'tr-TR' || b.lang === 'en-US') return 1;
+      return 0;  
+    });
+  
+    voiceSelect.innerHTML = "";
+  
+    voices.forEach(voice => {
+        const option = document.createElement("option");
+        option.textContent = `${voice.name} (${voice.lang})`;
+  
+        option.setAttribute("data-lang", voice.lang);
+        option.setAttribute("data-name", voice.name);
+        voiceSelect.appendChild(option);
+    });
+  };
+  
+  getVoices();
+  
+  if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = getVoices;
+  }
 
 if (synth.onvoiceschanged !== undefined) {
   synth.onvoiceschanged = getVoices;
