@@ -71,7 +71,7 @@ const speak = () => {
     row.style.backgroundRepeat = "repeat-x";
     row.style.backgroundSize = "100% 100%";
 
-    const speakText = new SpeechSynthesisUtterance(textInput.value + 'yala beni meteeeeeeeee');
+    const speakText = new SpeechSynthesisUtterance(textInput.value + 'yala beni baki');
 
     speakText.onend = () => {
         console.log("Done speaking...");
