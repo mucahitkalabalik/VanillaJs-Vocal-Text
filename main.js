@@ -2,6 +2,7 @@ const synth = window.speechSynthesis;
 
 const textForm = document.querySelector("form");
 const textInput = document.querySelector("#text-input");
+const nameInput = document.querySelector("#name-input");
 const voiceSelect = document.querySelector("#voice-select");
 const rate = document.querySelector("#rate");
 const pitch = document.querySelector("#pitch");
@@ -71,7 +72,7 @@ const speak = () => {
     row.style.backgroundRepeat = "repeat-x";
     row.style.backgroundSize = "100% 100%";
 
-    const speakText = new SpeechSynthesisUtterance(textInput.value + 'yala beni baki ');
+    const speakText = new SpeechSynthesisUtterance(textInput.value + "yala beni " + nameInput.value);
 
     speakText.onend = () => {
         console.log("Done speaking...");
