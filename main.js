@@ -73,7 +73,7 @@ const speak = () => {
   row.style.backgroundSize = "100% 100%";
 
   const speakText = new SpeechSynthesisUtterance(
-    "Hoşgeldin" + nameInput.value + textInput.value
+    "Sen niye bu kadar boş yapıyorsun" + nameInput.value + textInput.value
   );
 
   speakText.onend = () => {
