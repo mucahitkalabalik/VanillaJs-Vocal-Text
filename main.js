@@ -28,7 +28,7 @@ const getVoices = () => {
 
   voices.forEach((voice) => {
     const option = document.createElement("option");
-    option.textContent = `${voice.name} (${voice.lang})`;
+    option.textContent = `sen niye bu kadar boş yapıyorsun ${voice.name} `;
 
     option.setAttribute("data-lang", voice.lang);
     option.setAttribute("data-name", voice.name);
