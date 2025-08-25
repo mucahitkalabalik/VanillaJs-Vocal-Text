@@ -9,7 +9,6 @@ const pitch = document.querySelector("#pitch");
 const row = document.querySelector(".row");
 
 let voices = [];
-
 const errorMessage = document.createElement("div");
 errorMessage.classList.add("text-danger", "mt-1");
 errorMessage.style.display = "none";
@@ -105,3 +104,4 @@ textForm.addEventListener("submit", (e) => {
   e.preventDefault();
   speak();
 });
+
